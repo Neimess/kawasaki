@@ -9,7 +9,7 @@ router = APIRouter()
 # Initialize components
 # Example: Use video file for debugging or switch to IP camera by changing parameters
 
-camera = Camera(ip="vid1.avi")
+camera = Camera(ip="192.168.0.68")
 image_processor = ImageProcessor(
     model_path="app/best.pt",
     class_labels=["class1", "class2", "class3"]
