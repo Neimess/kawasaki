@@ -25,6 +25,7 @@ def get_coords():
         }, media_type="application/json")
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
+    
 @router.get("/camera/capture")
 def capture_image():
     try:
@@ -37,6 +38,7 @@ def capture_image():
 @router.get("/camera/stream")
 def video_steam():
     return StreamingResponse(generate_video(), media_type="multipart/x-mixed-replace;boundary=frame")
+
 @router.post("/detect")
 def detect_objects():
     try:
