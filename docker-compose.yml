@@ -1,0 +1,37 @@
+services:
+  api:
+    build:
+      context: app
+    # depends_on:
+    #   - db
+    #   - redis
+    env_file:
+      - .env_vars
+    network_mode: host
+#   db:
+#     image: postgres:15
+#     environment:
+#       POSTGRES_USER: user
+#       POSTGRES_PASSWORD: password
+#       POSTGRES_DB: database_name
+#     volumes:
+#       - db_data:/var/lib/postgresql/data
+#     ports:
+#       - "5432:5432"
+
+#   redis:
+#     image: redis:7
+#     ports:
+#       - "6379:6379"
+
+#   nginx:
+#     image: nginx:latest
+#     volumes:
+#       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+#     ports:
+#       - "80:80"
+#     depends_on:
+#       - api
+
+# volumes:
+#   db_data:
